@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AgentForm from "./components/AgentForm.vue";
 import { ref } from "vue";
+import logo from "./assets/pure-logo.svg";
 import type { PropertyAgent } from "./services/api";
 
 const lastCreatedAgent = ref<PropertyAgent | null>(null);
@@ -13,9 +14,12 @@ const handleSuccess = (agent: PropertyAgent) => {
 <template>
   <div class="app">
     <header class="header">
-      <div class="container">
-        <h1>Property Agent Management</h1>
-        <p>Create and manage property agents</p>
+      <div class="container flex items-center gap-4">
+        <img :src="logo" alt="Company Logo" class="company-logo" />
+        <!-- <div>
+          <h1>Property Agent Management</h1>
+          <p>Create and manage property agents</p>
+        </div> -->
       </div>
     </header>
 
@@ -238,5 +242,20 @@ body {
   text-align: center;
   font-size: 14px;
   opacity: 0.9;
+}
+
+.company-logo {
+  height: 3rem; /* similar to h-12 in Tailwind (~48px) */
+  width: auto; /* maintain aspect ratio */
+  max-width: 100%; /* ensures it doesn't overflow its container */
+  margin-right: "10px";
+  display: block; /* avoids inline spacing issues */
+}
+
+/* Optional: responsive scaling */
+@media (max-width: 600px) {
+  .company-logo {
+    height: 2.5rem; /* smaller logo on mobile */
+  }
 }
 </style>
