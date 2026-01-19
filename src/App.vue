@@ -62,6 +62,18 @@ const handleSuccess = (agent: PropertyAgent) => {
           </div>
 
           <div class="api-section">
+            <h4>Search Agents via Name</h4>
+            <code>GET http://localhost:3000/agents?search=Joshua</code>
+            <pre>curl -X GET http://localhost:3000/agents?search=Joshua</pre>
+          </div>
+
+          <div class="api-section">
+            <h4>Search Agents via Email</h4>
+            <code>GET http://localhost:3000/agents?Email=Joshua</code>
+            <pre>curl -X GET http://localhost:3000/agents?Email=Joshua</pre>
+          </div>
+
+          <div class="api-section">
             <h4>View Single Agent</h4>
             <code>GET http://localhost:3000/agents/:id</code>
             <pre>curl -X GET http://localhost:3000/agents/abc123</pre>
