@@ -3,6 +3,7 @@ import AgentForm from "./components/AgentForm.vue";
 import { ref } from "vue";
 import logo from "./assets/pure-logo.svg";
 import type { PropertyAgent } from "./services/api";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const lastCreatedAgent = ref<PropertyAgent | null>(null);
 
@@ -57,31 +58,31 @@ const handleSuccess = (agent: PropertyAgent) => {
 
           <div class="api-section">
             <h4>View All Agents</h4>
-            <code>GET http://localhost:3000/agents</code>
+            <code>GET {{ apiUrl }}/agents</code>
             <pre>curl -X GET http://localhost:3000/agents</pre>
           </div>
 
           <div class="api-section">
             <h4>Search Agents via Name</h4>
-            <code>GET http://localhost:3000/agents?search=Joshua</code>
+            <code>GET {{ apiUrl }}/agents?search=Joshua</code>
             <pre>curl -X GET http://localhost:3000/agents?search=Joshua</pre>
           </div>
 
           <div class="api-section">
             <h4>Search Agents via Email</h4>
-            <code>GET http://localhost:3000/agents?Email=Joshua</code>
+            <code>GET {{ apiUrl }}/agents?Email=Joshua</code>
             <pre>curl -X GET http://localhost:3000/agents?Email=Joshua</pre>
           </div>
 
           <div class="api-section">
             <h4>View Single Agent</h4>
-            <code>GET http://localhost:3000/agents/:id</code>
+            <code>GET {{ apiUrl }}/agents/:id</code>
             <pre>curl -X GET http://localhost:3000/agents/abc123</pre>
           </div>
 
           <div class="api-section">
             <h4>Delete Agent</h4>
-            <code>DELETE http://localhost:3000/agents/:id</code>
+            <code>DELETE {{ apiUrl }}/agents/:id</code>
             <pre>curl -X DELETE http://localhost:3000/agents/abc123</pre>
           </div>
         </div>
