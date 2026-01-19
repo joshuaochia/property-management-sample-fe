@@ -1,7 +1,12 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.MODE === "production"
+    ? "https://property-management-sample.onrender.com/"
+    : "http://localhost:3000";
+
 const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL,
   headers: {
     "Content-Type": "application/json",
   },
