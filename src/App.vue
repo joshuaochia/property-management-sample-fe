@@ -59,31 +59,31 @@ const handleSuccess = (agent: PropertyAgent) => {
           <div class="api-section">
             <h4>View All Agents</h4>
             <code>GET {{ apiUrl }}/agents</code>
-            <pre>curl -X GET http://localhost:3000/agents</pre>
+            <pre>curl -X GET {{ apiUrl }}/agents</pre>
           </div>
 
           <div class="api-section">
             <h4>Search Agents via Name</h4>
             <code>GET {{ apiUrl }}/agents?search=Joshua</code>
-            <pre>curl -X GET http://localhost:3000/agents?search=Joshua</pre>
+            <pre>curl -X GET {{ apiUrl }}/agents?search=Joshua</pre>
           </div>
 
           <div class="api-section">
             <h4>Search Agents via Email</h4>
             <code>GET {{ apiUrl }}/agents?Email=Joshua</code>
-            <pre>curl -X GET http://localhost:3000/agents?Email=Joshua</pre>
+            <pre>curl -X GET {{ apiUrl }}/agents?Email=Joshua</pre>
           </div>
 
           <div class="api-section">
             <h4>View Single Agent</h4>
             <code>GET {{ apiUrl }}/agents/:id</code>
-            <pre>curl -X GET http://localhost:3000/agents/abc123</pre>
+            <pre>curl -X GET {{ apiUrl }}/agents/abc123</pre>
           </div>
 
           <div class="api-section">
             <h4>Delete Agent</h4>
             <code>DELETE {{ apiUrl }}/agents/:id</code>
-            <pre>curl -X DELETE http://localhost:3000/agents/abc123</pre>
+            <pre>curl -X DELETE {{ apiUrl }}/agents/abc123</pre>
           </div>
         </div>
       </div>
